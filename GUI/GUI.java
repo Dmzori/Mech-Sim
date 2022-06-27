@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.text.Utilities;
 
 
 public class GUI {
@@ -99,6 +100,13 @@ public class GUI {
         mainFrame.setVisible(true);
         mainFrame.setTitle("Mech Sim");
         
+    }
+    
+    public String getTextAreaLastLine(){
+        String text = textArea.getText();
+        String[] lines = text.split("\n");
+        String lastLine = lines[lines.length-1];
+        return lastLine;
     }
     
 }
