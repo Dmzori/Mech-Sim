@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.text.Utilities;
 
 
 public class GUI {
@@ -40,7 +39,7 @@ public class GUI {
         gridBagLayout = new GridBagLayout();
         textFieldConstraint = new GridBagConstraints();//each component should have its own constraint size when added to it's panel unless you want them to act the same at all times 
         textAreaConstraint = new GridBagConstraints();
-        textAction = new TextFieldEnterAction(textField, textArea);
+        textAction = new TextFieldEnterAction(textField, textArea, this);
         smartScroller = new SmartScroller(scrollPane, SmartScroller.VERTICAL, SmartScroller.END);
 
         
@@ -106,7 +105,13 @@ public class GUI {
         String text = textArea.getText();
         String[] lines = text.split("\n");
         String lastLine = lines[lines.length-1];
+        System.out.println(lastLine);
         return lastLine;
+        
+    }
+    
+    public JTextArea getTextArea(){
+        return textArea;
     }
     
 }
