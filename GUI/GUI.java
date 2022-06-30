@@ -1,6 +1,6 @@
 package GUI;
 
-import GUI.Listeners.TextFieldEnterAction;
+import GUI.Listeners.GameManager;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -24,7 +24,7 @@ public class GUI {
     private final GridBagConstraints textFieldConstraint;//the size constraint to be used for the gridbaglayout
     private final GridBagConstraints textAreaConstraint;
     private final Dimension minSize;//the min size of the frame
-    private final TextFieldEnterAction  textAction;
+    private final GameManager  textAction;
     private final SmartScroller smartScroller;
     
     public GUI()
@@ -39,7 +39,7 @@ public class GUI {
         gridBagLayout = new GridBagLayout();
         textFieldConstraint = new GridBagConstraints();//each component should have its own constraint size when added to it's panel unless you want them to act the same at all times 
         textAreaConstraint = new GridBagConstraints();
-        textAction = new TextFieldEnterAction(textField, textArea, this);
+        textAction = new GameManager(textField, textArea, this);
         smartScroller = new SmartScroller(scrollPane, SmartScroller.VERTICAL, SmartScroller.END);
 
         
